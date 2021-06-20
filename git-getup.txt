@@ -220,6 +220,23 @@ this will update the git website data
 
 10: git pust origin
 
+11: Make ansible cfg file (config file)
+
+
+12: ansible all --list hosts
+
+
+13: ansible all -m gather_facts 
+13b: To out put use 13: ansible all -m gather_facts >facts.txt
+
+nano ansible.cfg
+
+[defaults]
+inventory = hosts
+private_key_file = ~/ .ssh/ansible   
+
+
+
 
 # 
 # 
