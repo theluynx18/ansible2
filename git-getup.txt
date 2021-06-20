@@ -1,0 +1,257 @@
+#  1 git add [file]
+#  2 git status 
+#  3 git push oragin master
+#
+#
+#
+#
+#
+#
+#
+#      test
+# 
+# 
+
+
+
+$/etc/motd
+                 
+
+                British Intelligence Agencies
+
+    ************************************************************
+    *  This system is for the use of authorized users only.    *
+    *  Individuals using this computer system without          *
+    *  authority, or in excess of their authority, are subject *
+    *  to having all of their activities on this system        *
+    *  monitored and recorded by system personnel.  In the     *
+    *  course of monitoring individuals improperly using this  *
+    *  system, or in the course of system maintenance, the     *
+    *  activities of authorized users may also be monitored.   *
+    *  Anyone using this system expressly consents to such     *
+    *  monitoring and is advised that if such monitoring       *
+    *  reveals possible evidence of criminal activity, system  *
+    *  personnel may provide the evidence of such monitoring   *
+    *  to law enforcement officials.                           *
+    ************************************************************
+
+                 British Intelligence Agencies
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$ansible -a "sudo shutdown" all
+
+
+you will need ****************************************************************************** you will need:sudo 
+
+ansible -- version
+
+adduser qwerty                (to make user)
+usermod -aG sudo username    (this will make user sudo user)
+sudo apt-get install sshpass
+ssh-keygen
+
+login
+
+:qa!
+
+
+
+
+
+
+
+
+
+
+
+web1 ansible_host=server1.company.com ansible_connection=ssh ansible_user=root ansible_ssh_pass=Password123!
+web2 ansible_host=server2.company.com ansible_connection=ssh ansible_user=root ansible_ssh_pass=Password123!
+web3 ansible_host=server3.company.com ansible_connection=ssh ansible_user=root ansible_ssh_pass=Password123!
+
+
+
+db1 ansible_host=server4.company.com ansible_connection=winrm ansible_user=administrator ansible_password=Password123!
+
+
+
+ansible-playbook update-me.yaml --ask-become-pass
+
+
+
+ -i .ssh/id_rsa.pub
+***********************************************************
+
+ansible all -m command --arg 'sudo shutdown'
+
+
+
+************************************************************
+
+echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf > /dev/
+
+************************************************************
+
+[unbuntu:children]
+database
+dotcms
+
+[unbuntu:vars]
+ansible_user=ubuntu
+
+*************************************************************
+                         sudo password remove
+/etc/sudoers.tmp
+sudo EDITOR=/usr/bin/nano visudo
+
+
+alex ALL=(ALL) NOPASSWD: ALL       (add this line)
+
+
+**************************************************************
+
+ssh
+
+$ ssh-keygen
+$ ls .ssh       (his will show keys)
+
+****************************************************************
+
+$ ssh-copy-id -i .ssh/id_rsa.pub 192.168.10.241         (do this from ansible box to remote server)
+
+
+********************************************************
+
+sudo EDITOR=/usr/bin/nano visudo
+
+*************************************************************
+
+ping command
+
+ ansible all -m command --arg 'sudo apt-get upgrade'
+
+ansible all -m ping 
+
+
+***************************************************************************************  boxseup:
+#server1 ansible_host=192.168.10.232 ansible_ssh_pass=T963"rar
+server1 ansible_host=192.168.10.232 #ansible_connection=ssh ansible_ssh_pass=T9>
+server2 ansible_host=192.168.10.231 #ansible_ssh_pass-T963"rar
+server3 ansible_host=192.168.10.235 #ansible_ssh_pass-T963"rar
+server4 ansible_host=192.168.10.234 #ansible_ssh_pass-T963"rar
+server5 ansible_host=192.168.10.236 #ansible_ssh_pass-T963"rar
+server6 ansible_host=192.168.10.237 #ansible_ssh_pass-T963"rar
+server7 ansible_host=192.168.10.238 #ansible_ssh_pass-T963"rar
+serverf1 ansible_host=192.168.10.241 #ansible_ssh_pass=T963"rar
+serverf2 ansible_host=192.168.10.242 #ansible_ssh_pass=T963"rar
+#server1 ansible_host=192.168.10.232 #ansible_connection=ssh ansible_ssh_pass=T>
+#server2 ansible_host=192.168.10.231 #ansible_ssh_pass-T963"rar
+#server3 ansible_host=192.168.10.235 #ansible_ssh_pass-T963"rar
+#server4 ansible_host=192.168.10.234 #ansible_ssh_pass-T963"rar
+#serverf1 ansible_host=192.168.10.241 #ansible_ssh_pass=T963"rar
+#serverf2 ansible_host=192.168.10.242 #ansible_ssh_pass=T963"rar
+[all:vars]
+ansible_connection=ssh
+ansible_user=alex
+ansible_ssh_pass=T963"rar
+
+
+******************************************************************************************   hosts
+
+
+
+192.168.10.106     pivpn
+192.168.10.232     server1
+192.168.10.231     server2
+192.168.10.235     server3
+192.168.10.234     server4
+192.168.10.236     server5
+192.168.10.237     server6
+192.168.10.238     server7
+192.168.10.241     serverf1
+192.168.10.242     serverf2
+
+
+
+
+youtube vid*****************************************************
+1:           ssh-keygen -t ed25519 -C"keyname"
+
+2:           $ ssh-copy-id -i .ssh/id_rsa.pub 192.168.10.241
+
+3:           $ eval $(ssh-agent)
+          ssh-add
+ssh
+4:         alias ssha='eval $(sshagent) && ssh-add'
+
+5:          sudo apt- install git
+
+
+6: get ssh key from ansible server put in github 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCfOtq1LNdtIsUGi2hekw7SspocI3m/gWWIf/+nI+tlysJ8uWtKhpofaDb4BSXVJYdRXuNnj4E12ENgfr7DWTniVg0hwuxUZds9TiTdvHK35YOCS6kUfp5fBtQ04n2OS/vMe1lqVAD30pHf4BjBp+73tcDdkkGA3vd3MB85psrxiiY1FIh+lhxF6XDqpoWjaIqXB5tG7nCcnqCiJfDK8TnbWcZhLJrrmg3pEDMfbipHpAmFLb9u2N3yuS8TXdBMU1H6dk3jA1pH1qcnzTUOLQYqvD6BEhlKNUwgUDe3XAFNUHCGOyJddg4BJepnz1aXrWENMcmat1lAzRriQToFMbKnMsf98+BgYeGcxBfuDeAdutTNl5HuZQgTScdKI13HiB3gBO+kbTXEjJC4w7FrLT0QFJ1J3YeMsnOwWs3fIYTOWDunF/hti9i/Pcr+Y1a9+I+Ly4tDz7b9TonJ0oXzWlqGIGiAjcZbWzcUXOD1AwUtP/Tjp0oNxa0hmqxSY1y1Gx8= alex@alex-Virtual-Machine
+
+7:  $git config --global user.name "alex"
+    $git config --global user.email "thelynx18@hotmail.com"
+    $ cat ~/.gitconfig 
+ 
+8:  $git git add README. md
+git commit -m "update readme file, initial commit"
+this will update the git website data
+
+9:  $git status 
+
+10: git pust origin
+
+
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
