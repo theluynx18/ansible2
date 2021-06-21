@@ -1,5 +1,6 @@
 #  1 git add [file]
 #  2 git status 
+#  3 git commit -m "words to all"
 #  3 git push oragin master
 #
 #
@@ -237,6 +238,14 @@ private_key_file = ~/ .ssh/ansible
 
 
 
+Handy Commands
+
+$ ansible all -m gather_facts
+
+$ ansible all -m gather_facts --limit 192.168.10.232
+
+
+$ ansible all -m apt -a update_cache=true --become --ask-become-pass
 
 # 
 # 
@@ -272,3 +281,4 @@ private_key_file = ~/ .ssh/ansible
 # 
 # 
 # 
+

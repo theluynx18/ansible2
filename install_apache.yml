@@ -4,6 +4,41 @@
   become: true
   tasks:
 
-  - name: install apache
+  - name: update repository index
+    apt:
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install apache2 package
     apt:
       name: apache2
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: add php support of apache
+    apt:
+      name: libapache2-mod-php
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+#xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   
+  - name: update repository index
+    dnf:
+      update_cache: yes
+    when: ansible_distribution == "Fedora"
+
+  - name: install apache2 package
+    dnf:
+      name: httpd
+      state: latest
+    when: ansible_distribution == "Fedora"
+  
+  - name: add php support of apache
+    dnf:
+      name: php
+      state: latest
+    when: ansible_distribution == "Fedora"
+
+
+
