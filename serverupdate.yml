@@ -1,0 +1,19 @@
+---
+ 
+ - hosts: all
+   become: true
+   tasks:
+ 
+   - name: install updates (Fedora)
+     tags: allways
+     dnf:
+       update_only: yes
+       update_cache: yes
+     when: ansible_distribution == "Fedora"
+ 
+   - name: install updates (Ubuntu)
+     tags: allways
+     apt:
+       upgrade: dist
+       update_cache: yes
+     when: ansible_distribution == "Ubuntu"
