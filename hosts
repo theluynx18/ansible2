@@ -50,6 +50,7 @@ server4 ansible_host=192.168.10.234
 server5 ansible_host=192.168.10.236
 server6 ansible_host=192.168.10.237
 server7 ansible_host=192.168.10.238
+[web_servers]
 serverf1 ansible_host=192.168.10.241
 serverf2 ansible_host=192.168.10.242
 [all:vars]
