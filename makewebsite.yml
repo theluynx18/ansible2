@@ -41,6 +41,14 @@
        state: latest
      when: ansible_distribution == "Fedora"
 
+   - name: start httpd (fedora)
+     tags: apache,apache2,httpd,fedora
+     service:
+       name: httpd
+       state: started
+       enabled: yes
+     when: ansible_distribution == "Fedora"
+
    - name: copy website files
      tags: apache,fedora,httpd
      copy:
@@ -50,3 +58,11 @@
        group: root
        mode: 0644
      when: ansible_distribution == "Fedora"  
+     register: httpd
+
+   - name: restart httpd (Fedora)
+     tags: apache,httpd,fedora
+     service:
+       name: httpd
+       state: restarted
+     when: httpd.changed
