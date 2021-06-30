@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  become: true
+  tasks: 
+  
+  - name: install aws cli
+    apt:
+      name:
+        - awscli
+      state: latest
+    when: ansible_distribution == "Ubuntu"
