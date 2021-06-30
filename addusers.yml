@@ -1,0 +1,28 @@
+---
+
+
+ - hosts: all
+   become: true
+   tasks:
+
+   - name: add users
+     tags: always
+     user: 
+       name: simone
+       groups: root
+
+       
+   - name: add ssh key for simone
+     tags: always
+     authorized_key:
+       user: simone
+       key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC+PxQds100QOAOmMyHzKkx1qCVl7lt+BvHJwZ24RhAP7NmuAtgw3WNc8N+JJg5lLJqh0xkk/Rf6LAcJxwIYp4k8LaWrtUbpKxfDG9qahgwTShHOQmA2KItx5TIu0Ii8fZBw4m6zK9wdhOup8K/D9ahcLyaLZ8Hk33dh43ayL+00H5kr8MOiJ0A4KeaDB1H58jXw6a0N7xVk4YBcYEJvhtGM3MCFswfN+gImg0iXvllCjLK7adbtEr9wwNcf3Co13OUdwpvpwoJ/fC57C33iwia3dn5uRytF/U7fAgdLDClK+58W8SaakzMB8qq/OzdPgyC7mkpfFhWKby5YuuDZZD7d72drD9XShMu0T32GuN6QKuxeKcLhJjafLoaTag1mL/CfqMuhUC8OJdQjz6ld2Dms6DAUPBTP4wTmYlVNpPyILClFrbAEZ10qbnW0yMeMpIdiwnirBP487AHlKmzeycBbZPLb9+qcATLUCO5kD4lgNYdym7sN7lufEZ+r5M7j0c= alex@alex-Virtual-Machine"
+ 
+   - name: add sudoers file for simone
+     tags: always
+     copy:
+       src: sudoer_simone
+       dest: /etc/sudoers.d/simone
+       owner: root
+       group: root
+       mode: 0440
